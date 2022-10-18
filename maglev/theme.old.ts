@@ -1,6 +1,14 @@
-import { MaglevTheme } from "../maglev-core/types";
+import { Theme } from "../maglev-core/types";
 
-const theme: MaglevTheme = {
+// export type MaglevCta01Section = {
+//   settings: {
+//     title: MaglevTextSettingType
+//     body: MaglevTextSettingType
+//     background_image: MaglevImageSettingType
+//   }
+// }
+
+const theme: Theme = {
   name: "blabla",
   description: "First Maglev theme ported to Nuxt",
   icons: [],

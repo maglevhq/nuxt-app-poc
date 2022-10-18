@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 import axios from 'axios'
-import theme from "~~/maglev/theme"
-import { MaglevConfig, MaglevTheme } from "~~/maglev-core/types"
+import theme from "~~/maglev/theme.old"
+import { MaglevConfig, Theme } from "~~/maglev-core/types"
 import config from "~~/maglev-core/config"
 
-async function updateTheme(theme: MaglevTheme, config: MaglevConfig) {
+async function updateTheme(theme: Theme, config: MaglevConfig) {
   try {
     await axios.put(
       `${config.apiBaseURL}/theme`,

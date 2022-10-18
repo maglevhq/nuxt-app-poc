@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "ajv": "^8.11.0",
-    "nuxt-helmet": "^2.1.1"
+    "nuxt-helmet": "^2.1.1",
+    "readdir-glob": "^1.1.2"
   }
 }

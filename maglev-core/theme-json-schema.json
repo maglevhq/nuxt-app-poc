@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Maglev Theme Schema",
+  "description": "JSON Schema definition for the Maglev Theme",
+  "type": "object",
+  "properties": {
+    "name": {
+      "title": "Name of the theme",
+      "type": "string",
+      "minLength": 3
+    },
+    "description": {
+      "title": "Description of the theme",
+      "type": "string",
+      "minLength": 3
+    },
+    "icons": {
+      "title": "Library of CSS icons (class names)",
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "sectionCategories": {
+      "title": "Categories of the sections",
+      "type": "array",
+      "items": {
+        "properties": {
+          "id": { "title": "Id of the category (used in the section definition)", "type": "string" },
+          "name": { "title": "Displayed in the Editor UI", "type": "string" }
+        }        
+      }
+    }    
+  },
+  "additionalProperties": false,
+  "required": ["name", "description", "sectionCategories"]
+}

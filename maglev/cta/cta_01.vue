@@ -1,10 +1,10 @@
 <script setup lang="ts">
   import { PropType } from 'vue'
-  import { MaglevPageSection } from '~~/maglev-core/types'
+import { Cta01Section } from '../types';
   
   defineProps({
     section: {
-      type: Object as PropType<MaglevPageSection>,
+      type: Object as PropType<Cta01Section>,
       required: true
     },     
   })
@@ -12,22 +12,20 @@
 
 <template>
   <aside class="overflow-hidden bg-gray-50 sm:grid sm:grid-cols-2">
-    <pre><code>{{ section }}</code></pre>
     <div class="p-8 md:p-12 lg:px-16 lg:py-24">
       <div class="mx-auto max-w-xl text-center sm:text-left">
-        <!-- section.settings.title.value /section.settings.title.domId / section.settings.title.rawValue / section.settings.title.isRichText -->
-        <!-- <h2 
+        <h2 
           class="text-2xl font-bold text-gray-900 md:text-3xl" 
-          :data-maglev-id="`${section.id}.${section.settings[0].id}`"
+          :data-maglev-id="`${section.settings.title.domId}`"
         >
-          {{ section.settings[0].value }}
-        </h2> -->
+          {{ section.settings.title.value }}
+        </h2>
 
-        <!-- <p 
+        <p 
           class="hidden text-gray-500 md:mt-4 md:block"           
-          :data-maglev-id="`${section.id}.${section.settings[1].id}`"
-          v-html="section.settings[1].value"
-        /> -->
+          :data-maglev-id="section.settings.body.domId"
+          v-html="section.settings.body.value"
+        />
         
         <div class="mt-4 md:mt-8">
           <a
@@ -40,11 +38,11 @@
       </div>
     </div>
 
-    <!-- <img
+    <img
       alt="Student"
-      :data-maglev-id="`${section.id}.${section.settings[2]?.id}`"
-      :src="section.settings[2]?.value?.url"
+      :data-maglev-id="section.settings.background_image.domId"
+      :src="section.settings.background_image.url"
       class="h-56 w-full object-cover sm:h-full"
-    /> -->
+    />
   </aside>
 </template>

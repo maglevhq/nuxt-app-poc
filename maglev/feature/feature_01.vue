@@ -1,10 +1,10 @@
 <script setup lang="ts">
   import { PropType } from 'vue'
-  import { APIMaglevPageSection } from '~~/maglev-core/types'
+  import { Feature01Section } from '../types';
   
   defineProps({
     section: {
-      type: Object as PropType<APIMaglevPageSection>,
+      type: Object as PropType<Feature01Section>,
       required: true
     },     
   })
