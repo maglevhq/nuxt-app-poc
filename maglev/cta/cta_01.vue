@@ -15,6 +15,7 @@
     <pre><code>{{ section }}</code></pre>
     <div class="p-8 md:p-12 lg:px-16 lg:py-24">
       <div class="mx-auto max-w-xl text-center sm:text-left">
+        <!-- section.settings.title.value /section.settings.title.domId / section.settings.title.rawValue / section.settings.title.isRichText -->
         <!-- <h2 
           class="text-2xl font-bold text-gray-900 md:text-3xl" 
           :data-maglev-id="`${section.id}.${section.settings[0].id}`"

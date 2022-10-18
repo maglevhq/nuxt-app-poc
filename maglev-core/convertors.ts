@@ -8,3 +8,11 @@ export const convertAPISections = (theme: MaglevTheme, apiSections: APIMaglevPag
     blocks: []
   }))
 }
+
+// CTA 01 => theme.sections[0]
+// const section = foo('cta_01', theme, content)
+// section.settings.title // Yeah!
+// section.settings.blabla // type error
+export const magicFunction = (id: string, theme: MaglevTheme, content: APIMaglevPageSection) => {
+  
+}
