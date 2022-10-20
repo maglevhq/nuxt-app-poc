@@ -6,11 +6,11 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "build-maglev-gen": "./node_modules/.bin/esbuild cli/maglev-gen.ts --bundle --platform=node --outfile=./bin/maglev-gen",
+    "build-maglev-codegen": "./node_modules/.bin/esbuild cli/maglev-codegen.ts --bundle --platform=node --outfile=./bin/maglev-codegen",
     "build-maglev-sync": "./node_modules/.bin/esbuild cli/maglev-sync.ts --bundle --platform=node --outfile=./bin/maglev-sync",
-    "maglev-gen": "./bin/maglev-gen",
+    "maglev-codegen": "./bin/maglev-codegen",
     "maglev-sync": "./bin/maglev-sync",
-    "dev-maglev-gen": "yarn build-maglev-gen && yarn maglev-gen",
+    "dev-maglev-codegen": "yarn build-maglev-codegen && yarn maglev-codegen",
     "dev-maglev-sync": "yarn build-maglev-sync && yarn maglev-sync"
   },
   "devDependencies": {

@@ -11,7 +11,7 @@ export type Cta01Section = CoreTypes.Section & {
   }
 }
 
-export type Feature01Section = {
+export type Feature01Section = CoreTypes.Section & {
   id: string
   settings: {
     title: CoreTypes.TextSetting
@@ -28,6 +28,7 @@ export type Feature01SectionFeatureItemBlock = {
     description: CoreTypes.TextSetting
   }
 }
+  
 
 const sectionDefinitionMapping: CoreTypes.SectionDefinitionMapping = {
   cta_01: {
@@ -47,8 +48,9 @@ const sectionDefinitionMapping: CoreTypes.SectionDefinitionMapping = {
     blocks: {
       feature_item: {
         settings: {
-          title: 'text',
-          body: 'text'
+          name: 'text',
+          icon: 'icon',
+          description: 'text'
         }
       }
     }

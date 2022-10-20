@@ -7,6 +7,12 @@
       {
         src: 'http://localhost:3000/maglev/dev-live-preview-client.js',
         body: true
+      },      
+    ],
+    link: [
+      {
+        rel: 'stylesheet',
+        href: 'https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css'
       }
     ]
   })

@@ -23,7 +23,7 @@ import { buildSectionFromAPI } from '~~/maglev-core/convertors';
     currentAPISections.value = event.detail.content.pageSections  
   }
 
-  const replaceSection = (event) => {
+  const replaceSection = (event) => {    
     const newSection = event.detail.section
     currentAPISections.value = currentAPISections.value.map(section => {
       return section.id === newSection.id ? newSection : section
@@ -39,15 +39,23 @@ import { buildSectionFromAPI } from '~~/maglev-core/convertors';
   onMounted(() => {
     window.addEventListener('maglev:section:add', changeSections)
     window.addEventListener('maglev:section:move', changeSections)
-    window.addEventListener('maglev:section:setting:update', replaceSection)
-    window.addEventListener('maglev:section:remove', removeSection)    
+    window.addEventListener('maglev:section:update', replaceSection)
+    window.addEventListener('maglev:section:remove', removeSection)
+    window.addEventListener('maglev:block:add', replaceSection)
+    window.addEventListener('maglev:block:move', replaceSection)
+    window.addEventListener('maglev:block:update', replaceSection)
+    window.addEventListener('maglev:block:remove', replaceSection)
   })
 
   onBeforeUnmount(() => {
     window.removeEventListener('maglev:section:add', changeSections)
     window.removeEventListener('maglev:section:move', changeSections)
-    window.removeEventListener('maglev:section:setting:update', replaceSection)
+    window.removeEventListener('maglev:section:update', replaceSection)
     window.removeEventListener('maglev:section:remove', removeSection)    
+    window.removeEventListener('maglev:block:add', replaceSection)
+    window.removeEventListener('maglev:block:move', replaceSection)
+    window.removeEventListener('maglev:block:update', replaceSection)
+    window.removeEventListener('maglev:block:remove', replaceSection)    
   })
 </script>
 <template>

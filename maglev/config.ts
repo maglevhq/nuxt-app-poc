@@ -1,4 +1,4 @@
-import { MaglevConfig } from "./core-types";
+import { MaglevConfig } from "~~/maglev-core/types";
 
 export default {
   apiBaseURL: 'http://localhost:3000/api',

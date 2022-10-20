@@ -23,11 +23,13 @@ export type SectionCategory = {
 export type SectionDefinitionMapping = {
   [sectionId: string]: {
     settings: Record<string, string>
-    blocks: {
-      [sectionId: string]: {
-        settings: Record<string, string>
-      }
-    }
+    blocks: BlockDefinitionMapping
+  }
+}
+
+export type BlockDefinitionMapping = {
+  [sectionId: string]: {
+    settings: Record<string, string>
   }
 }
 
@@ -141,11 +143,13 @@ export type APIPage = {
 export type APIPageSection = {
   id: string
   type: string
-  blocks: {
-    id: string
-    type: string
-    settings: APIPageSetting[]
-  }[]
+  blocks: APIPageBlock[]
+  settings: APIPageSetting[]
+}
+
+export type APIPageBlock = {
+  id: string
+  type: string
   settings: APIPageSetting[]
 }
 
@@ -156,14 +160,19 @@ export type APIPageSetting = {
 
 // Content
 
-export type Section = {
+export type ContentElement = {
+  id: string
+  settings: Record<string, Setting>
+}
+
+export type Section = ContentElement & {
   id: string
   type: string
   settings: Record<string, Setting>
   blocks: Block[]
 }
 
-export type Block = {
+export type Block = ContentElement & {
   id: string
   type: string
   settings: Record<string, Setting>
@@ -177,6 +186,7 @@ export type Setting =
 | SelectSetting
 | RadioSetting 
 | CheckboxSetting
+| ColorSetting
 
 export type TextSetting = {
   domId: string
@@ -217,4 +227,9 @@ export type RadioSetting = {
 export type CheckboxSetting = {
   domId: string
   value: boolean
+}
+
+export type ColorSetting = {
+  domId: string
+  value: string
 }
