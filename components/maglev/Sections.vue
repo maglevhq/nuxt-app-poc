@@ -45,6 +45,7 @@ import { buildSectionFromAPI } from '~~/maglev-core/convertors';
     window.addEventListener('maglev:block:move', replaceSection)
     window.addEventListener('maglev:block:update', replaceSection)
     window.addEventListener('maglev:block:remove', replaceSection)
+    window.addEventListener('maglev:style:update', changeSections)
   })
 
   onBeforeUnmount(() => {
@@ -56,6 +57,7 @@ import { buildSectionFromAPI } from '~~/maglev-core/convertors';
     window.removeEventListener('maglev:block:move', replaceSection)
     window.removeEventListener('maglev:block:update', replaceSection)
     window.removeEventListener('maglev:block:remove', replaceSection)    
+    window.removeEventListener('maglev:style:update', changeSections)
   })
 </script>
 <template>

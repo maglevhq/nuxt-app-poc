@@ -5,7 +5,7 @@
     charset: 'utf-8',
     script: [
       {
-        src: 'http://localhost:3000/maglev/dev-live-preview-client.js',
+        src: 'http://localhost:3000/maglev/live-preview-client.js',
         body: true
       },      
     ],
